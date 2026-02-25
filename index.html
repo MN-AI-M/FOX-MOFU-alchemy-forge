@@ -2,11 +2,11 @@
 
 
 <!DOCTYPE html>
-<html lang="en"> <head>
+<html lang="ja"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Bloxd Image Alchemy - Fox Mofu | High-Fidelity Pixel Art Converter</title>
+    <title>Bloxd Image Alchemy - Bloxd : Fox Mofu | High-Fidelity Pixel Art Converter</title>
     
     <meta name="description" content="Transform images into professional pixel art instantly with 340 blocks. The ultimate Bloxd.io converter with unique high-performance algorithms. | 340種類のブロックで一瞬でドット絵へ。最高峰のBloxd.io用変換ツール。">
     
@@ -53,26 +53,29 @@
     
 <body>
     <div style="display:none;">
-        <h1>Bloxd Image Alchemy - Fox Mofu</h1>
-        <h2>The Ultimate High-Performance Pixel Art Converter for Bloxd.io</h2>
-        <p>
-            Powered by the "CORE FORGE" engine, this tool instantly calculates the best combination from 340 blocks. 
-            No complex settings required—just upload your image for professional results.
-        </p>
-        <ul>
-            <li>**Easy for Everyone**: Professional pixel art with zero technical knowledge.</li>
-            <li>**Stunning Accuracy**: Preserves photo details with advanced Lab color space algorithms.</li>
-            <li>**Lightning Fast**: Optimized with 50,000 lines of Cython code for 3-second processing.</li>
-            <li>**100% Free**: Experience world-class conversion technology right now.</li>
-        </ul>
+        <div id="seo-content">
 
-        <hr>
+    <h1>Bloxd Image Alchemy - Fox Mofu</h1>
 
-        <h2>誰でも簡単に「神レベル」のドット絵が作れる最高峰の変換ツール</h2>
-        <p>
-            340種類のブロックから最適な組み合わせを一瞬で計算。
-            画像をアップロードするだけで、初心者でもプロ級のマイクラ・Bloxd.io用ドット絵アートが完成します。
-        </p>
+    <h2 class="lang-en">
+        The Ultimate High-Performance Pixel Art Converter for Bloxd.io
+    </h2>
+
+    <h2 class="lang-ja">
+        誰でも簡単に「神レベル」のドット絵が作れる最高峰の変換ツール
+    </h2>
+
+    <p class="lang-en">
+        Powered by the "CORE FORGE" engine, this tool instantly calculates the best combination from 340 blocks.
+        Just upload your image for professional results.
+    </p>
+
+    <p class="lang-ja">
+        340種類のブロックから最適な組み合わせを一瞬で計算。
+        画像をアップロードするだけでプロ級のドット絵が完成します。
+    </p>
+
+</div>
     </div>
     
     <iframe 
@@ -102,6 +105,17 @@
                 }, 1000); 
             }, 2000); // 2000ミリ秒（2秒）待つ
         });
+    // ===== 言語自動切替 =====
+    const userLang = navigator.language || navigator.userLanguage;
+
+    const enElements = document.querySelectorAll(".lang-en");
+    const jaElements = document.querySelectorAll(".lang-ja");
+
+    if (userLang.startsWith("ja")) {
+        enElements.forEach(el => el.style.display = "none");
+    } else {
+        jaElements.forEach(el => el.style.display = "none");
+    }
     </script>
 </body>
 </html>

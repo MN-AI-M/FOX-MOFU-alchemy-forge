@@ -1,109 +1,111 @@
-
-
-
 <!DOCTYPE html>
-<html lang="ja"> <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Bloxd Image Alchemy - Bloxd : Fox Mofu | High-Fidelity Pixel Art Converter</title>
-    
-    <meta name="description" content="Transform images into professional pixel art instantly with 340 blocks. The ultimate Bloxd.io converter with unique high-performance algorithms. | 340種類のブロックで一瞬でドット絵へ。最高峰のBloxd.io用変換ツール。">
-    
-    <meta property="og:description" content="The ultimate Bloxd.io converter that preserves the true beauty of your photos. Easy for everyone, professional results in seconds.">
-    
-    <meta name="google-site-verification" content="google414261fc4eee564e" />
-    <link rel="icon" sizes="32x32" type="image/png" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
-    <link rel="apple-touch-icon"href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:image" content="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #000; }
-        iframe {
-            width: 100%;
-            height: 100vh;
-            border: none;
-        }
+<title>Bloxd Image Alchemy - Fox Mofu | High-Fidelity Pixel Art Converter</title>
 
-        /* 黒いカーテン（ロード画面）のスタイル */
-        #loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000; /* 真っ黒 */
-            z-index: 9999; /* 一番手前に表示 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 1s ease; /* 1秒かけてふわっと消える */
-            pointer-events: none; /* 下のボタンを押せるようにする */
-        }
+<meta name="description" content="Transform images into professional pixel art instantly with 340 blocks. The ultimate Bloxd.io converter. | 340種類のブロックで一瞬でドット絵へ変換。最高峰のBloxd.io用ツール。">
 
-        /* 真ん中に何か文字を出したい場合はここ（空でもOK） */
-        .loading-text {
-            color: #555;
-            font-family: sans-serif;
-            letter-spacing: 2px;
-        }
-        #seo-content {
+<meta property="og:description" content="High-performance Bloxd.io pixel art converter.">
+<meta property="og:image" content="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
+
+<link rel="icon" sizes="32x32" type="image/png" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
+<link rel="apple-touch-icon" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+iframe {
+    width: 100%;
+    height: 100vh;
+    border: none;
+}
+
+/* SEOテキストを画面外へ */
+#seo-content {
     position: absolute;
     left: -9999px;
     top: -9999px;
 }
-    </style>
+
+/* ロード画面 */
+#loading-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease;
+}
+
+.loading-text {
+    color: #555;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+</style>
 </head>
-    
+
 <body>
-    <div id="seo-content">
 
-        <h1>Bloxd Image Alchemy - Fox Mofu</h1>
-    
-        <h2 class="lang-en">
-            The Ultimate High-Performance Pixel Art Converter for Bloxd.io
-        </h2>
-    
-        <h2 class="lang-ja">
-            誰でも簡単に「神レベル」のドット絵が作れる最高峰の変換ツール
-        </h2>
-    
-        <p class="lang-en">
-            Powered by the "CORE FORGE" engine, this tool instantly calculates the best combination from 340 blocks.
-            Just upload your image for professional results.
-        </p>
-    
-        <p class="lang-ja">
-            340種類のブロックから最適な組み合わせを一瞬で計算。
-            画像をアップロードするだけでプロ級のドット絵が完成します。
-        </p>
+<!-- SEO用テキスト -->
+<div id="seo-content">
+<h1>Bloxd Image Alchemy - Fox Mofu</h1>
 
-    </div>
-    
-    <iframe 
-        src="https://foxmofuyt-fox-mofu-bloxd-image-alchemy.hf.space" 
-        allow="accelerometer; camera; gyroscope; microphone; clipboard-read; clipboard-write; display-capture; downloads"
-        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-downloads"></iframe>
-    <div id="loading-overlay">
-        <h1>Bloxd Image Alchemy - Fox Mofu</h1>
-        <p>The Ultimate High-Performance Pixel Art Converter for Bloxd.io...</p>
-    </div>
+<h2 class="lang-en">
+The Ultimate High-Performance Pixel Art Converter for Bloxd.io
+</h2>
 
+<h2 class="lang-ja">
+誰でも簡単に「神レベル」のドット絵が作れる最高峰の変換ツール
+</h2>
 
-    <script>
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                const overlay = document.getElementById('loading-overlay');
-                overlay.style.opacity = '0'; // 透明にする
-                
-                // 完全に消えたら邪魔にならないように削除
-                setTimeout(() => {
-                    overlay.style.display = 'none';
-                }, 1000); 
-            }, 2000); // 2000ミリ秒（2秒）待つ
-        });
-    // ===== 言語自動切替 =====
+<p class="lang-en">
+Powered by the CORE FORGE engine. Instantly calculates the best combination from 340 blocks.
+</p>
+
+<p class="lang-ja">
+340種類のブロックから最適な組み合わせを一瞬で計算。
+画像をアップロードするだけでプロ級のドット絵が完成します。
+</p>
+</div>
+
+<!-- 本体 -->
+<iframe
+src="https://foxmofuyt-fox-mofu-bloxd-image-alchemy.hf.space"
+allow="accelerometer; camera; gyroscope; microphone; clipboard-read; clipboard-write; display-capture; downloads"
+sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-downloads">
+</iframe>
+
+<!-- ロード表示 -->
+<div id="loading-overlay">
+<div class="loading-text">CORE FORGE LOADING...</div>
+</div>
+
+<script>
+// ロード画面フェード
+window.addEventListener("load", function () {
+    setTimeout(function () {
+        const overlay = document.getElementById("loading-overlay");
+        overlay.style.opacity = "0";
+        setTimeout(() => overlay.style.display = "none", 1000);
+    }, 2000);
+});
+
+// 言語自動切替
+document.addEventListener("DOMContentLoaded", function () {
     const userLang = navigator.language || navigator.userLanguage;
 
     const enElements = document.querySelectorAll(".lang-en");
@@ -114,6 +116,8 @@
     } else {
         jaElements.forEach(el => el.style.display = "none");
     }
-    </script>
+});
+</script>
+
 </body>
 </html>

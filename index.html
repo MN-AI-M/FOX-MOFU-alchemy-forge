@@ -49,7 +49,6 @@
             padding: 0;
             height: 100%;
             background-color: #000;
-            /* iframeのために基本は隠すが、下のSEOテキストは見せたいのでスクロールを許可 */
             overflow-x: hidden;
             overflow-y: auto;
         }
@@ -60,11 +59,9 @@
             border: none;
             display: block;
         }
-
-        /* SEOテキスト：フッターのようにページ下部に配置 */
         #seo-content {
             padding: 80px 20px;
-            color: #222; /* 黒背景に馴染ませる（Googleには見える） */
+            color: #222; 
             font-family: sans-serif;
             text-align: center;
             background: #000;
@@ -73,8 +70,6 @@
         #seo-content h1 { font-size: 1.2rem; }
         #seo-content h2 { font-size: 1rem; }
         #seo-content p { font-size: 0.8rem; }
-
-        /* ロード画面 */
         #loading-overlay {
             position: fixed;
             inset: 0;
@@ -84,7 +79,7 @@
             justify-content: center;
             align-items: center;
             transition: opacity 1s ease;
-            pointer-events: none; /* ロード後はクリックを邪魔しない */
+            pointer-events: none; 
         }
 
         .loading-text {
@@ -117,7 +112,6 @@
 </div>
 
 <script>
-    // ロード画面フェード
     window.addEventListener("load", function () {
         setTimeout(function () {
             const overlay = document.getElementById("loading-overlay");
@@ -125,8 +119,6 @@
             setTimeout(() => overlay.style.display = "none", 1000);
         }, 2000);
     });
-
-    // 言語自動切替
     document.addEventListener("DOMContentLoaded", function () {
         const userLang = navigator.language || navigator.userLanguage;
         const enElements = document.querySelectorAll(".lang-en");

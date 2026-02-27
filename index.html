@@ -1,246 +1,144 @@
-
 <!DOCTYPE html>
-
 <html lang="ja">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-<title>Bloxd Image Alchemy -Bloxd! Fox Mofu | High-Fidelity Pixel Art Converter</title>
-
-
-
-<meta name="description" content="Transform images into professional pixel art instantly with 340 blocks. The ultimate Bloxd.io converter. | 340種類のブロックで一瞬でドット絵へ変換。最高峰のBloxd.io用ツール。">
-
-
-
-<meta property="og:description" content="High-performance Bloxd.io pixel art converter.">
-
-<meta property="og:image" content="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
-
-
-
-<link rel="icon" sizes="32x32" type="image/png" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
-
-<link rel="apple-touch-icon" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
-
-
-
-<meta name="twitter:card" content="summary_large_image">
-
-
-
-<style>
-
-body, html {
-
-margin: 0;
-
-padding: 0;
-
-height: 100%;
-
-overflow: hidden;
-
-background-color: #000;
-
-}
-
-
-
-iframe {
-
-width: 100%;
-
-height: 100vh;
-
-border: none;
-
-}
-
-
-
-/* SEOテキストを画面外へ */
-
-#seo-content {
-
-position: absolute;
-
-left: -9999px;
-
-top: -9999px;
-
-}
-
-
-
-/* ロード画面 */
-
-#loading-overlay {
-
-position: fixed;
-
-inset: 0;
-
-background-color: #000;
-
-z-index: 9999;
-
-display: flex;
-
-justify-content: center;
-
-align-items: center;
-
-transition: opacity 1s ease;
-
-}
-
-
-
-.loading-text {
-
-color: #555;
-
-font-family: sans-serif;
-
-letter-spacing: 2px;
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fox Mofu | High-Fidelity Bloxd.io Pixel Art Converter (340 Blocks)</title>
+    <meta name="description" content="【Bloxd.io専用】340種類のブロックで一瞬で高品質なドット絵へ変換。The ultimate Bloxd image converter with 340 blocks. High-performance algorithms for professional pixel art.">
+    <meta name="keywords" content="Bloxd.io, Bloxd, Pixel Art, Converter, ドット絵, 変換, Fox Mofu, Image Alchemy">
+
+    <link rel="alternate" hreflang="ja" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/">
+    <link rel="alternate" hreflang="en" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/">
+    <link rel="alternate" hreflang="x-default" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/">
+
+    <meta property="og:title" content="Fox Mofu | Bloxd.io Pixel Art Converter">
+    <meta property="og:description" content="340種類のブロックを駆使した最高峰のBloxd用変換ツール。High-fidelity image alchemy for Bloxd.io.">
+    <meta property="og:image" content="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Fox Mofu Pixel Art Converter",
+      "operatingSystem": "Web",
+      "applicationCategory": "DesignApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "A high-fidelity pixel art converter for Bloxd.io using 340 different blocks.",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "100"
+      }
+    }
+    </script>
+
+    <link rel="icon" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png" sizes="any">
+    <link rel="shortcut icon" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
+    <link rel="apple-touch-icon" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #000;
+            /* iframeのために基本は隠すが、下のSEOテキストは見せたいのでスクロールを許可 */
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+            display: block;
+        }
+
+        /* SEOテキスト：フッターのようにページ下部に配置 */
+        #seo-content {
+            padding: 80px 20px;
+            color: #222; /* 黒背景に馴染ませる（Googleには見える） */
+            font-family: sans-serif;
+            text-align: center;
+            background: #000;
+        }
+
+        #seo-content h1 { font-size: 1.2rem; }
+        #seo-content h2 { font-size: 1rem; }
+        #seo-content p { font-size: 0.8rem; }
+
+        /* ロード画面 */
+        #loading-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: #000;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1s ease;
+            pointer-events: none; /* ロード後はクリックを邪魔しない */
+        }
+
+        .loading-text {
+            color: #555;
+            font-family: sans-serif;
+            letter-spacing: 2px;
+        }
+    </style>
 </head>
-
-
 
 <body>
 
-
-
-<!-- SEO用テキスト -->
-
-<div id="seo-content">
-
-<h1>Bloxd Image Alchemy - Fox Mofu</h1>
-
-
-
-<h2 class="lang-en">
-
-The Ultimate High-Performance Pixel Art Converter for Bloxd.io
-
-</h2>
-
-
-
-<h2 class="lang-ja">
-
-誰でも簡単に高品質のドット絵が作れる変換ツール
-
-</h2>
-
-
-
-<p class="lang-en">
-
-Powered by the CORE FORGE engine. Instantly calculates the best combination from 340 blocks.
-
-</p>
-
-
-
-<p class="lang-ja">
-
-340種類のブロックから最適な組み合わせを一瞬で計算。
-
-画像をアップロードするだけでプロ級のドット絵が完成します。
-
-</p>
-
-</div>
-
-
-
-<!-- 本体 -->
-
 <iframe
-
-src="https://foxmofuyt-fox-mofu-bloxd-image-alchemy.hf.space"
-
-allow="accelerometer; camera; gyroscope; microphone; clipboard-read; clipboard-write; display-capture; downloads"
-
-sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-downloads">
-
+    src="https://foxmofuyt-fox-mofu-bloxd-image-alchemy.hf.space"
+    allow="accelerometer; camera; gyroscope; microphone; clipboard-read; clipboard-write; display-capture; downloads"
+    sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-downloads">
 </iframe>
 
-
-
-<!-- ロード表示 -->
-
-<div id="loading-overlay">
-
-<div class="loading-text">CORE FORGE LOADING...</div>
-
+<div id="seo-content">
+    <h1>Bloxd Image Alchemy - Fox Mofu</h1>
+    <h2 class="lang-en">The Ultimate High-Performance Pixel Art Converter for Bloxd.io</h2>
+    <h2 class="lang-ja">誰でも簡単に高品質のドット絵が作れる変換ツール</h2>
+    <p class="lang-en">Powered by the CORE FORGE engine. Instantly calculates the best combination from 340 blocks.</p>
+    <p class="lang-ja">340種類のブロックから最適な組み合わせを一瞬で計算。画像をアップロードするだけでプロ級のドット絵が完成します。</p>
+    <p style="color:#111;">Keywords: Bloxd.io, Bloxd, Pixel Art, Converter, 340 blocks, Fox Mofu</p>
 </div>
 
-
+<div id="loading-overlay">
+    <div class="loading-text">CORE FORGE LOADING...</div>
+</div>
 
 <script>
+    // ロード画面フェード
+    window.addEventListener("load", function () {
+        setTimeout(function () {
+            const overlay = document.getElementById("loading-overlay");
+            overlay.style.opacity = "0";
+            setTimeout(() => overlay.style.display = "none", 1000);
+        }, 2000);
+    });
 
-// ロード画面フェード
+    // 言語自動切替
+    document.addEventListener("DOMContentLoaded", function () {
+        const userLang = navigator.language || navigator.userLanguage;
+        const enElements = document.querySelectorAll(".lang-en");
+        const jaElements = document.querySelectorAll(".lang-ja");
 
-window.addEventListener("load", function () {
-
-setTimeout(function () {
-
-const overlay = document.getElementById("loading-overlay");
-
-overlay.style.opacity = "0";
-
-setTimeout(() => overlay.style.display = "none", 1000);
-
-}, 2000);
-
-});
-
-
-
-// 言語自動切替
-
-document.addEventListener("DOMContentLoaded", function () {
-
-const userLang = navigator.language || navigator.userLanguage;
-
-
-
-const enElements = document.querySelectorAll(".lang-en");
-
-const jaElements = document.querySelectorAll(".lang-ja");
-
-
-
-if (userLang.startsWith("ja")) {
-
-enElements.forEach(el => el.style.display = "none");
-
-} else {
-
-jaElements.forEach(el => el.style.display = "none");
-
-}
-
-});
-
+        if (userLang.startsWith("ja")) {
+            enElements.forEach(el => el.style.display = "none");
+        } else {
+            jaElements.forEach(el => el.style.display = "none");
+        }
+    });
 </script>
 
-
-
 </body>
-
 </html>

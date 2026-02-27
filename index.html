@@ -165,6 +165,10 @@ Powered by the CORE FORGE engine. Instantly calculates the best combination from
 
 </div>
 
+
+
+<!-- 本体 -->
+
 <iframe
 
 src="https://foxmofuyt-fox-mofu-bloxd-image-alchemy.hf.space"
@@ -175,6 +179,10 @@ sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox al
 
 </iframe>
 
+
+
+<!-- ロード表示 -->
+
 <div id="loading-overlay">
 
 <div class="loading-text">CORE FORGE LOADING...</div>
@@ -184,6 +192,8 @@ sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox al
 
 
 <script>
+
+// ロード画面フェード
 
 window.addEventListener("load", function () {
 
@@ -201,6 +211,7 @@ setTimeout(() => overlay.style.display = "none", 1000);
 
 
 
+// 言語自動切替
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -225,63 +236,6 @@ jaElements.forEach(el => el.style.display = "none");
 }
 
 });
-
-
-
-
-
-
-
-async function loadGallery() {
-
-const url = "https://huggingface.co/datasets/YourID/Forge-Data/raw/main/metadata.jsonl";
-
-try {
-
-const response = await fetch(url);
-
-const text = await response.text();
-
-const posts = text.split('\n').filter(line => line).map(JSON.parse);
-
-
-const galleryEl = document.getElementById('gallery-container');
-
-galleryEl.innerHTML = posts.map(post => `
-
-<div class="post-card">
-
-<img src="${post.preview_url}" alt="Preview">
-
-<button onclick="downloadZip('${post.zip_url}')">設計図を入手</button>
-
-</div>
-
-`).join('');
-
-} catch (e) {
-
-console.error("Gallery Load Failed", e);
-
-}
-
-}
-
-
-
-
-
-async function hashPassword(password) {
-
-const msgUint8 = new TextEncoder().encode(password);
-
-const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
-
-const hashArray = Array.from(new Uint8Array(hashBuffer));
-
-return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-
-}
 
 </script>
 

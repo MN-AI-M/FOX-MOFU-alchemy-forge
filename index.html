@@ -1,1 +1,292 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport"content="width=device-width,initial-scale=1.0"><title>Bloxd Image Alchemy-Bloxd!Fox Mofu|High-Fidelity Pixel Art Converter</title><meta name="description"content="Transform images into professional pixel art instantly with 340 blocks. The ultimate Bloxd.io converter.|340種類のブロックで一瞬でドット絵へ変換。最高峰のBloxd.io用ツール。"><meta property="og:description"content="High-performance Bloxd.io pixel art converter."><meta property="og:image"content="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png"><link rel="icon"sizes="32x32"type="image/png" href="https:/FOX-MOFU-alchemy-forge/icon.png"><link rel="apple-touch-icon"href="https://mn-ai-m.github.io//-1;">ロード中、または投稿がありません...</p></div><script>window.addEventListener("load",function (){setTimeout(function (){const overlay=document.getElementById("loading-overlay");overlay.style.opacity="0";setTimeout(()=>overlay.style.display="none",1000)},2000)});document.addEventListener("DOMContentLoaded",function (){const userLang=navigator.language||navigator.userLanguage;const enElements=document.querySelectorAll(".lang-en");const jaElements=document.querySelectorAll(".lang-ja");if (userLang.startsWith("ja")){enElements.forEach(el=>el.style.display="none")}else{jaElements.forEach(el=>el.style.display="none")}});async function loadGallery(){const url="https://huggingface.co/datasets/YourID/Forge-Data/raw/main/metadata.jsonl";try{const response=await fetch(url);const text=await response.text();const posts=text.split('\n').filter(line=>line).map(JSON.parse);const galleryEl=document.getElementById('gallery-container');galleryEl.innerHTML=posts.map(post=>` <div class="post-card"><img src="${post.preview_url}"alt="Preview"><button onclick="downloadZip('${post.zip_url}')">設計図を入手</button></div>`).join('')}catch (e){console.error("Gallery Load Failed",e)}}async function hashPassword(password){const msgUint8=new TextEncoder().encode(password);const hashBuffer=await crypto.subtle.digest('SHA-256',msgUint8);const hashArray=Array.from(new Uint8Array(hashBuffer));return hashArray.map(b=>b.toString(16).padStart(2,'0')).join('')}function toggleGallery(show){const gallery=document.getElementById('gallery-overlay');const converter=document.getElementById('converter-block');const nav=document.getElementById('nav-block');if (show){gallery.style.display='flex';converter.style.display='none';nav.style.display='none';loadGallery()}else{gallery.style.display='none';converter.style.display='block';nav.style.display='flex'}}async function submitToGallery(){const pass=document.getElementById('gallery-pass').value;if(!pass)return alert("パスワードを入力してください");const secureKey=await hashPassword(pass);console.log("キー:",secureKey,"を送信します...")}</script></body></html>
+
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<title>Bloxd Image Alchemy -Bloxd! Fox Mofu | High-Fidelity Pixel Art Converter</title>
+
+
+
+<meta name="description" content="Transform images into professional pixel art instantly with 340 blocks. The ultimate Bloxd.io converter. | 340種類のブロックで一瞬でドット絵へ変換。最高峰のBloxd.io用ツール。">
+
+
+
+<meta property="og:description" content="High-performance Bloxd.io pixel art converter.">
+
+<meta property="og:image" content="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
+
+
+
+<link rel="icon" sizes="32x32" type="image/png" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
+
+<link rel="apple-touch-icon" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+
+
+
+<style>
+
+body, html {
+
+margin: 0;
+
+padding: 0;
+
+height: 100%;
+
+overflow: hidden;
+
+background-color: #000;
+
+}
+
+
+
+iframe {
+
+width: 100%;
+
+height: 100vh;
+
+border: none;
+
+}
+
+
+
+/* SEOテキストを画面外へ */
+
+#seo-content {
+
+position: absolute;
+
+left: -9999px;
+
+top: -9999px;
+
+}
+
+
+
+/* ロード画面 */
+
+#loading-overlay {
+
+position: fixed;
+
+inset: 0;
+
+background-color: #000;
+
+z-index: 9999;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+transition: opacity 1s ease;
+
+}
+
+
+
+.loading-text {
+
+color: #555;
+
+font-family: sans-serif;
+
+letter-spacing: 2px;
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<!-- SEO用テキスト -->
+
+<div id="seo-content">
+
+<h1>Bloxd Image Alchemy - Fox Mofu</h1>
+
+
+
+<h2 class="lang-en">
+
+The Ultimate High-Performance Pixel Art Converter for Bloxd.io
+
+</h2>
+
+
+
+<h2 class="lang-ja">
+
+誰でも簡単に高品質のドット絵が作れる変換ツール
+
+</h2>
+
+
+
+<p class="lang-en">
+
+Powered by the CORE FORGE engine. Instantly calculates the best combination from 340 blocks.
+
+</p>
+
+
+
+<p class="lang-ja">
+
+340種類のブロックから最適な組み合わせを一瞬で計算。
+
+画像をアップロードするだけでプロ級のドット絵が完成します。
+
+</p>
+
+</div>
+
+<iframe
+
+src="https://foxmofuyt-fox-mofu-bloxd-image-alchemy.hf.space"
+
+allow="accelerometer; camera; gyroscope; microphone; clipboard-read; clipboard-write; display-capture; downloads"
+
+sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-downloads">
+
+</iframe>
+
+<div id="loading-overlay">
+
+<div class="loading-text">CORE FORGE LOADING...</div>
+
+</div>
+
+
+
+<script>
+
+window.addEventListener("load", function () {
+
+setTimeout(function () {
+
+const overlay = document.getElementById("loading-overlay");
+
+overlay.style.opacity = "0";
+
+setTimeout(() => overlay.style.display = "none", 1000);
+
+}, 2000);
+
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+const userLang = navigator.language || navigator.userLanguage;
+
+
+
+const enElements = document.querySelectorAll(".lang-en");
+
+const jaElements = document.querySelectorAll(".lang-ja");
+
+
+
+if (userLang.startsWith("ja")) {
+
+enElements.forEach(el => el.style.display = "none");
+
+} else {
+
+jaElements.forEach(el => el.style.display = "none");
+
+}
+
+});
+
+
+
+
+
+
+
+async function loadGallery() {
+
+const url = "https://huggingface.co/datasets/YourID/Forge-Data/raw/main/metadata.jsonl";
+
+try {
+
+const response = await fetch(url);
+
+const text = await response.text();
+
+const posts = text.split('\n').filter(line => line).map(JSON.parse);
+
+
+const galleryEl = document.getElementById('gallery-container');
+
+galleryEl.innerHTML = posts.map(post => `
+
+<div class="post-card">
+
+<img src="${post.preview_url}" alt="Preview">
+
+<button onclick="downloadZip('${post.zip_url}')">設計図を入手</button>
+
+</div>
+
+`).join('');
+
+} catch (e) {
+
+console.error("Gallery Load Failed", e);
+
+}
+
+}
+
+
+
+
+
+async function hashPassword(password) {
+
+const msgUint8 = new TextEncoder().encode(password);
+
+const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
+
+const hashArray = Array.from(new Uint8Array(hashBuffer));
+
+return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>

@@ -3,15 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Fox Mofu | High-Fidelity Bloxd.io Pixel Art Converter (340 Blocks)</title>
-    <meta name="description" content="【Bloxd.io専用】340種類のブロックで一瞬で高品質なドット絵へ変換。The ultimate Bloxd image converter with 340 blocks. High-performance algorithms for professional pixel art.">
-    <meta name="keywords" content="Bloxd.io, Bloxd, Pixel Art, Converter, ドット絵, 変換, Fox Mofu, Image Alchemy">
-
-    <link rel="alternate" hreflang="ja" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/">
-    <link rel="alternate" hreflang="en" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/">
-    <link rel="alternate" hreflang="x-default" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/">
-
+    <title>Fox Mofu | High-Fidelity Bloxd.io Pixel Art Converter</title>
+    <meta name="description" content="【Bloxd.io専用】340種類のブロックを駆使して一瞬で高品質なドット絵へ変換。画像をアップロードするだけでプロ級のピクセルアートが完成します。The ultimate Bloxd image converter.">
+    <meta name="author" content="Shousei Masuda">
+    
     <meta property="og:title" content="Fox Mofu | Bloxd.io Pixel Art Converter">
     <meta property="og:description" content="340種類のブロックを駆使した最高峰のBloxd用変換ツール。High-fidelity image alchemy for Bloxd.io.">
     <meta property="og:image" content="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
@@ -21,94 +16,80 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
+      "@type": "WebApplication",
       "name": "Fox Mofu Pixel Art Converter",
-      "operatingSystem": "Web",
+      "operatingSystem": "Web Browser",
       "applicationCategory": "DesignApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
+      "author": {
+        "@type": "Person",
+        "name": "Shousei Masuda"
       },
-      "description": "A high-fidelity pixel art converter for Bloxd.io using 340 different blocks.",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "ratingCount": "100"
-      }
+      "description": "A high-fidelity pixel art converter for Bloxd.io using 340 different blocks."
     }
     </script>
-
-    <link rel="icon" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png" sizes="any">
-    <link rel="shortcut icon" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
-    <link rel="apple-touch-icon" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png">
-
+<link rel="icon" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png" sizes="any">
     <style>
         body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #000;
-            overflow-x: hidden;
-            overflow-y: auto;
+            margin: 0; padding: 0; background-color: #0a0a0a; color: #f0f0f0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        .header {
+            text-align: center; padding: 20px 10px; background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+        .header h1 { font-size: 1.8rem; margin: 0 0 10px 0; color: #fff; }
+        .header p { font-size: 1rem; color: #aaa; margin: 0; }
+        
+        .tool-container {
+            width: 100%; max-width: 1400px; margin: 0 auto;
+        }
         iframe {
-            width: 100%;
-            height: 100vh;
-            border: none;
-            display: block;
+            width: 100%; height: 80vh; border: none; display: block; background: #000;
         }
-        #seo-content {
-            padding: 80px 20px;
-            color: #222; 
-            font-family: sans-serif;
-            text-align: center;
-            background: #000;
+        
+        .seo-content {
+            max-width: 1000px; margin: 40px auto; padding: 0 20px 40px; line-height: 1.6;
         }
-
-        #seo-content h1 { font-size: 1.2rem; }
-        #seo-content h2 { font-size: 1rem; }
-        #seo-content p { font-size: 0.8rem; }
+        .seo-content h2 { border-bottom: 2px solid #333; padding-bottom: 10px; color: #e0e0e0; }
+        .seo-content h3 { color: #ccc; margin-top: 30px; }
+        .seo-content ul { color: #bbb; }
+        
         #loading-overlay {
-            position: fixed;
-            inset: 0;
-            background-color: #000;
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 1s ease;
-            pointer-events: none; 
+            position: fixed; inset: 0; background-color: #000; z-index: 9999;
+            display: flex; justify-content: center; align-items: center; transition: opacity 1s ease;
         }
-
-        .loading-text {
-            color: #555;
-            font-family: sans-serif;
-            letter-spacing: 2px;
-        }
+        .loading-text { color: #888; letter-spacing: 3px; font-weight: bold; }
     </style>
 </head>
-
 <body>
-
-<iframe
-    src="https://foxmofuyt-fox-mofu-bloxd-image-alchemy.hf.space"
-    allow="accelerometer; camera; gyroscope; microphone; clipboard-read; clipboard-write; display-capture; downloads"
-    sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-downloads">
-</iframe>
-
-<div id="seo-content">
-    <h1>Bloxd Image Alchemy - Fox Mofu</h1>
-    <h2 class="lang-en">The Ultimate High-Performance Pixel Art Converter for Bloxd.io</h2>
-    <h2 class="lang-ja">誰でも簡単に高品質のドット絵が作れる変換ツール</h2>
-    <p class="lang-en">Powered by the CORE FORGE engine. Instantly calculates the best combination from 340 blocks.</p>
-    <p class="lang-ja">340種類のブロックから最適な組み合わせを一瞬で計算。画像をアップロードするだけでプロ級のドット絵が完成します。</p>
-    <p style="color:#111;">Keywords: Bloxd.io, Bloxd, Pixel Art, Converter, 340 blocks, Fox Mofu</p>
-</div>
-
 <div id="loading-overlay">
     <div class="loading-text">CORE FORGE LOADING...</div>
+</div>
+
+<div class="header">
+    <h1>Fox Mofu | Bloxd.io Pixel Art Converter</h1>
+    <p>340種類のブロックから最適な組み合わせを一瞬で計算するドット絵変換ツール</p>
+</div>
+
+<div class="tool-container">
+    <iframe
+        src="https://foxmofuyt-fox-mofu-bloxd-image-alchemy.hf.space"
+        allow="accelerometer; camera; gyroscope; microphone; clipboard-read; clipboard-write; display-capture; downloads"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-downloads">
+    </iframe>
+</div>
+
+<div class="seo-content">
+    <h2>About This Tool / このツールについて</h2>
+    <p>「Fox Mofu Pixel Art Converter」は、ブラウザゲーム <strong>Bloxd.io</strong> の建築向けに特化した、高精度の画像変換（Image Alchemy）ツールです。CORE FORGEエンジンを搭載し、お手持ちの画像を瞬時にプロ級のピクセルアート設計図に変換します。</p>
+
+    <h3>Features / 主な機能</h3>
+    <ul>
+        <li><strong>340 Blocks Supported:</strong> Bloxd.io内に存在する340種類ものブロックデータを網羅。色合いや質感を極限まで再現します。</li>
+        <li><strong>High-Performance Algorithm:</strong> 独自の計算により、最も自然で美しいブロックの組み合わせを自動提案します。</li>
+        <li><strong>Easy to Use:</strong> 画像をアップロードするだけで、誰でも簡単に高品質なドット絵（Pixel Art）の設計図を作成可能です。</li>
+    </ul>
+
+    <h3>How to Use / 使い方</h3>
+    <p>上のツール画面から変換したい画像（png, jpg等）をアップロードしてください。設定を調整することで、出力されるブロックの解像度や使用するブロックの種類をコントロールできます。</p>
 </div>
 
 <script>
@@ -117,18 +98,7 @@
             const overlay = document.getElementById("loading-overlay");
             overlay.style.opacity = "0";
             setTimeout(() => overlay.style.display = "none", 1000);
-        }, 2000);
-    });
-    document.addEventListener("DOMContentLoaded", function () {
-        const userLang = navigator.language || navigator.userLanguage;
-        const enElements = document.querySelectorAll(".lang-en");
-        const jaElements = document.querySelectorAll(".lang-ja");
-
-        if (userLang.startsWith("ja")) {
-            enElements.forEach(el => el.style.display = "none");
-        } else {
-            jaElements.forEach(el => el.style.display = "none");
-        }
+        }, 1500);
     });
 </script>
 

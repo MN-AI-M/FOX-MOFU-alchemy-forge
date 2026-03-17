@@ -27,46 +27,63 @@
       "description": "A high-fidelity pixel art converter for Bloxd.io using 340 different blocks."
     }
     </script>
-<link rel="icon" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png" sizes="any">
+
+    <link rel="icon" href="https://mn-ai-m.github.io/FOX-MOFU-alchemy-forge/icon.png" sizes="any">
+    
     <style>
         body, html {
-            margin: 0; padding: 0; background-color: #0a0a0a; color: #f0f0f0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0; padding: 0; background-color: #0a0a0a; color: #f0f0f0; 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
         }
         .header {
-            text-align: center; padding: 20px 10px; background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+            text-align: center; padding: 30px 10px; 
+            background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
         }
-        .header h1 { font-size: 1.8rem; margin: 0 0 10px 0; color: #fff; }
+        .header h1 { font-size: 2rem; margin: 0 0 10px 0; color: #fff; letter-spacing: 1px; }
         .header p { font-size: 1rem; color: #aaa; margin: 0; }
         
         .tool-container {
             width: 100%; max-width: 1400px; margin: 0 auto;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
         }
+        
+        /* 本体ソフトの長さを上げ、二重スクロールを防止 */
         iframe {
-            width: 100%; height: 110vh; border: none; display: block; background: #000;
+            width: 100%; 
+            height: 1200px; /* 十分な高さを確保 */
+            border: none; 
+            display: block; 
+            background: #000;
         }
         
         .seo-content {
-            max-width: 1000px; margin: 40px auto; padding: 0 20px 40px; line-height: 1.6;
+            max-width: 1000px; margin: 40px auto; padding: 0 20px 60px; line-height: 1.8;
         }
-        .seo-content h2 { border-bottom: 2px solid #333; padding-bottom: 10px; color: #e0e0e0; }
-        .seo-content h3 { color: #ccc; margin-top: 30px; }
-        .seo-content ul { color: #bbb; }
-        
+        .lang-block { margin-bottom: 50px; }
+        .seo-content h2 { border-bottom: 2px solid #333; padding-bottom: 10px; color: #fff; font-size: 1.5rem; }
+        .seo-content h3 { color: #4facfe; margin-top: 30px; font-size: 1.2rem; }
+        .seo-content p { color: #ccc; }
+        .seo-content ul { color: #bbb; padding-left: 20px; }
+        .seo-content li { margin-bottom: 10px; }
+        .highlight { color: #fff; font-weight: bold; }
+
         #loading-overlay {
             position: fixed; inset: 0; background-color: #000; z-index: 9999;
             display: flex; justify-content: center; align-items: center; transition: opacity 1s ease;
         }
-        .loading-text { color: #888; letter-spacing: 3px; font-weight: bold; }
+        .loading-text { color: #00e5ff; letter-spacing: 4px; font-weight: bold; font-family: monospace; }
     </style>
 </head>
 <body>
+
 <div id="loading-overlay">
     <div class="loading-text">CORE FORGE LOADING...</div>
 </div>
 
 <div class="header">
     <h1>Fox Mofu | Bloxd.io Pixel Art Converter</h1>
-    <p>340種類のブロックから最適な組み合わせを一瞬で計算するドット絵変換ツール</p>
+    <p>Ultimate High-Fidelity Image Alchemy for Builders</p>
 </div>
 
 <div class="tool-container">
@@ -78,18 +95,41 @@
 </div>
 
 <div class="seo-content">
-    <h2>About This Tool / このツールについて</h2>
-    <p>「Fox Mofu Pixel Art Converter」は、ブラウザゲーム <strong>Bloxd.io</strong> の建築向けに特化した、高精度の画像変換（Image Alchemy）ツールです。CORE FORGEエンジンを搭載し、お手持ちの画像を瞬時にプロ級のピクセルアート設計図に変換します。</p>
+    
+    <div class="lang-block">
+        <h2>About Fox Mofu Image Alchemy</h2>
+        <p><span class="highlight">Fox Mofu Pixel Art Converter</span> is a professional-grade tool specifically designed for the <span class="highlight">Bloxd.io</span> community. Powered by the proprietary CORE FORGE engine, it enables anyone to transform digital images into high-fidelity pixel art blueprints instantly.</p>
 
-    <h3>Features / 主な機能</h3>
-    <ul>
-        <li><strong>340 Blocks Supported:</strong> Bloxd.io内に存在する340種類ものブロックデータを網羅。色合いや質感を極限まで再現します。</li>
-        <li><strong>High-Performance Algorithm:</strong> 独自の計算により、最も自然で美しいブロックの組み合わせを自動提案します。</li>
-        <li><strong>Easy to Use:</strong> 画像をアップロードするだけで、誰でも簡単に高品質なドット絵（Pixel Art）の設計図を作成可能です。</li>
-    </ul>
+        <h3>Key Professional Features</h3>
+        <ul>
+            <li><span class="highlight">340+ Block Library:</span> We support the entire Bloxd.io block palette to ensure perfect color matching for your builds.</li>
+            <li><span class="highlight">Advanced Lab Algorithm:</span> Unlike standard converters, our engine calculates color differences using human visual perception (Lab color space) for stunning results.</li>
+            <li><span class="highlight">High-Performance Processing:</span> Instantly generate blueprints for everything from small logos to massive world-scale murals.</li>
+        </ul>
 
-    <h3>How to Use / 使い方</h3>
-    <p>上のツール画面から変換したい画像（png, jpg等）をアップロードしてください。設定を調整することで、出力されるブロックの解像度や使用するブロックの種類をコントロールできます。</p>
+        <h3>Quick Start Guide</h3>
+        <p>1. Drag and drop your image into the converter above.<br>
+           2. Select your <span class="highlight">Target Size</span> (Max Blocks) to fit your building area.<br>
+           3. Click <span class="highlight">"START CONVERT"</span> to get your block-by-block design.</p>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #333; margin: 40px 0;">
+
+    <div class="lang-block">
+        <h2>このツールについて</h2>
+        <p>「Fox Mofu Pixel Art Converter」は、<span class="highlight">Bloxd.io</span>での建築を劇的に進化させる高精度ドット絵変換ツールです。独自エンジン「CORE FORGE」により、写真をアップロードするだけでゲーム内で再現可能な設計図を生成します。</p>
+
+        <h3>プロ仕様の特徴</h3>
+        <ul>
+            <li><span class="highlight">340種類のブロックに対応:</span> ゲーム内の膨大なブロックデータを網羅。色合いだけでなく質感まで考慮した変換が可能です。</li>
+            <li><span class="highlight">最高峰の変換アルゴリズム:</span> 数学的計算に基づき、最も自然で美しいブロックの組み合わせを自動的に算出します。</li>
+            <li><span class="highlight">完全無料・高速処理:</span> 巨大な建築プロジェクトでも、ブラウザ上で一瞬で設計図を作成できます。</li>
+        </ul>
+
+        <h3>使い方</h3>
+        <p>上のツール画面に画像をドロップし、サイズ（ブロック数）を指定して「変換開始」ボタンを押すだけ。誰でも簡単にプロ級のドット絵建築を始めることができます。</p>
+    </div>
+
 </div>
 
 <script>
